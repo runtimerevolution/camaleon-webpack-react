@@ -1,6 +1,11 @@
-# Camaleon + webpack(er) + react
+# Install and Use
 
     bundle
-    rails generate camaleon_cms:install
-    rake camaleon_cms:generate_migrations
+    rake db:create
     rake db:migrate
+    
+    # open two terminal windows
+    rails s
+
+    # and on the other
+    bin/webpack-dev-server
