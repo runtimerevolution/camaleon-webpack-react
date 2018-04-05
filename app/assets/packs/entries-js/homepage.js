@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../../styles/entries/homepage'; // css
+import '../entries-style/homepage';
 
 import WebpackerReact from 'webpacker-react';
 import { Hello } from '../components/hello';

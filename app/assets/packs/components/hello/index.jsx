@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './style';
 
 export class Hello extends React.Component {
   render() {

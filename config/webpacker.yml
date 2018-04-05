@@ -2,7 +2,7 @@
 
 default: &default
   source_path: app/assets
-  source_entry_path: javascript/entries
+  source_entry_path: packs/entries-js
   public_output_path: assets
   cache_path: tmp/cache/webpacker
 

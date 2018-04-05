@@ -8,12 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <%= raw the_head %>
-        <%= stylesheet_pack_tag 'homepage' %>
+        <%= content_for :head %>
     </head>
 
     <body>
         <%= yield %>
-
-        <%= javascript_pack_tag 'homepage' %>
     </body>
 </html>
