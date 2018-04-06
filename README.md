@@ -12,11 +12,15 @@
     # optionally on the other
     bin/webpack-dev-server
 
+demo: [https://camaleon-webpack-react.herokuapp.com/](https://camaleon-webpack-react.herokuapp.com/)
+
 ## Choose the theme
 
 When first opening the CMS choose the theme runtime-revolution.
 
 ## Login
+
+(not in demo)
 
 - user: admin
 - pass: admin123
