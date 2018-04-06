@@ -3,7 +3,7 @@
 default: &default
   source_path: app/assets
   source_entry_path: packs/entries-js
-  public_output_path: assets
+  public_output_path: webpacker
   cache_path: tmp/cache/webpacker
 
   # Additional paths webpack should lookup modules
