@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331220518) do
+ActiveRecord::Schema.define(version: 2018_10_27_165840) do
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "cama_comments", force: :cascade do |t|
     t.string "author"
@@ -63,6 +84,25 @@ ActiveRecord::Schema.define(version: 20180331220518) do
     t.index ["objectid"], name: "index_cama_custom_fields_relationships_on_objectid"
   end
 
+  create_table "cama_media", force: :cascade do |t|
+    t.integer "site_id"
+    t.string "name"
+    t.boolean "is_folder", default: false
+    t.string "folder_path"
+    t.string "file_size"
+    t.string "dimension", default: ""
+    t.string "file_type"
+    t.string "url"
+    t.string "thumb"
+    t.boolean "is_public", default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["folder_path"], name: "index_cama_media_on_folder_path"
+    t.index ["is_folder"], name: "index_cama_media_on_is_folder"
+    t.index ["name"], name: "index_cama_media_on_name"
+    t.index ["site_id"], name: "index_cama_media_on_site_id"
+  end
+
   create_table "cama_metas", force: :cascade do |t|
     t.string "key"
     t.text "value", limit: 1073741823
@@ -74,8 +114,8 @@ ActiveRecord::Schema.define(version: 20180331220518) do
   end
 
   create_table "cama_posts", force: :cascade do |t|
-    t.string "title"
-    t.string "slug"
+    t.text "title"
+    t.text "slug"
     t.text "content", limit: 1073741823
     t.text "content_filtered", limit: 1073741823
     t.string "status", default: "published"
@@ -111,7 +151,7 @@ ActiveRecord::Schema.define(version: 20180331220518) do
     t.text "description", limit: 1073741823
     t.integer "parent_id"
     t.integer "count"
-    t.string "name"
+    t.text "name"
     t.string "slug"
     t.integer "term_group"
     t.integer "term_order"
@@ -149,6 +189,16 @@ ActiveRecord::Schema.define(version: 20180331220518) do
     t.index ["role"], name: "index_cama_users_on_role"
     t.index ["site_id"], name: "index_cama_users_on_site_id"
     t.index ["username"], name: "index_cama_users_on_username"
+  end
+
+  create_table "plugins_attacks", force: :cascade do |t|
+    t.string "path"
+    t.string "browser_key"
+    t.integer "site_id"
+    t.datetime "created_at"
+    t.index ["browser_key"], name: "index_plugins_attacks_on_browser_key"
+    t.index ["path"], name: "index_plugins_attacks_on_path"
+    t.index ["site_id"], name: "index_plugins_attacks_on_site_id"
   end
 
   create_table "plugins_contact_forms", force: :cascade do |t|

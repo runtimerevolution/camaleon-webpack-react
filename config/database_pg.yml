@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  database: cwr_<%= Rails.env %>
+  
+test:
+  <<: *default
+  username: postgres
+
+production:
+  <<: *default
+  host: localhost
+  password:
