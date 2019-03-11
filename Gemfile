@@ -1,17 +1,19 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 5.2.1'
-gem 'sqlite3'
-# gem 'pg'
+
+gem 'sqlite3', '< 1.4.0', group: :development
+gem 'pg', group: [:production, :test]
+
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'webpacker'
-gem 'webpacker-react', "~> 0.3.2"
+gem 'webpacker-react'
 gem 'jbuilder', '~> 2.5'
 
-gem 'camaleon_cms', path: '../camaleon-cms' # '~> 2.4.5.10'
+gem 'camaleon_cms', '~> 2.4.5'
 gem 'draper', '~> 3'
 
 gem 'bootsnap', require: false

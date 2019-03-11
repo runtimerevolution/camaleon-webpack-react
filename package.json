@@ -2,17 +2,18 @@
   "name": "camaleon-webpack-react",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.4.1",
-    "babel-preset-react": "^6.24.1",
-    "fast-sass-loader": "^1.4.1",
-    "hard-source-webpack-plugin": "^0.6.4",
-    "prop-types": "^15.6.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "webpack-merge": "^4.1.2",
+    "@babel/preset-react": "^7.0.0",
+    "@rails/webpacker": "^4.0.2",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "fast-sass-loader": "^1.4.7",
+    "hard-source-webpack-plugin": "^0.13.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "webpack-merge": "^4.2.1",
     "webpacker-react": "^0.3.2"
   },
   "devDependencies": {
-    "webpack-dev-server": "2.11.2"
+    "webpack-dev-server": "3.2.1"
   }
 }

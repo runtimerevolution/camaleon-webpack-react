@@ -191,16 +191,6 @@ ActiveRecord::Schema.define(version: 2018_10_27_165840) do
     t.index ["username"], name: "index_cama_users_on_username"
   end
 
-  create_table "plugins_attacks", force: :cascade do |t|
-    t.string "path"
-    t.string "browser_key"
-    t.integer "site_id"
-    t.datetime "created_at"
-    t.index ["browser_key"], name: "index_plugins_attacks_on_browser_key"
-    t.index ["path"], name: "index_plugins_attacks_on_path"
-    t.index ["site_id"], name: "index_plugins_attacks_on_site_id"
-  end
-
   create_table "plugins_contact_forms", force: :cascade do |t|
     t.integer "site_id"
     t.integer "count"
